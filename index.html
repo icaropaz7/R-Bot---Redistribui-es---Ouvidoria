@@ -189,7 +189,7 @@ function parseKV(s){if(!s||!s.trim())return[];return s.split(',').map(p=>{const 
 let meses=[],selIdx=0,compA=-1,compB=-1,curTab='geral';
 const charts={};
 
-function loadData(){
+function loadData(){meses=JSON.parse(JSON.stringify(DEFAULT_DATA));return;//
   try{const raw=localStorage.getItem(STORAGE_KEY);meses=raw?JSON.parse(raw):JSON.parse(JSON.stringify(DEFAULT_DATA))}
   catch(e){meses=JSON.parse(JSON.stringify(DEFAULT_DATA))}
 }
