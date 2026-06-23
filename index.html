@@ -186,7 +186,7 @@ const DEFAULT_DATA=[
 
 function parseKV(s){if(!s||!s.trim())return[];return s.split(',').map(p=>{const ps=p.trim().split(':');const n=ps.slice(0,-1).join(':').trim();const v=parseInt(ps[ps.length-1])||0;return[n,v]}).filter(([n])=>n)}
 
-let meses=[],selIdx=0,compA=-1,compB=-1,curTab='geral';
+let meses=[],selIdx=4,compA=-1,compB=-1,curTab='mensal';
 const charts={};
 
 function loadData(){
@@ -374,7 +374,7 @@ document.getElementById('btn-save').onclick=()=>{
 
 function initDash(){
 loadData();
-switchTab('geral');
+switchTab('mensal');
 renderMonthBtns('comp-btns');
 document.getElementById('last-update').textContent=`Atualizado em ${new Date().toLocaleDateString('pt-BR')}`;
 }
