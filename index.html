@@ -347,6 +347,7 @@ function switchTab(t){
   document.getElementById('view-comp').style.display=t==='comp'?'':'none';
   ['geral','mensal','comp'].forEach(id=>document.getElementById(`tab-${id}`).classList.toggle('active',id===t));
   if(t==='geral'){renderGeralMetrics();renderGeralCharts();}
+  if(t==='mensal')renderMonthly();
   if(t==='comp')renderComp();
 }
 
