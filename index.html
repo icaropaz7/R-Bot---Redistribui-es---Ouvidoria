@@ -563,7 +563,13 @@ window.switchTab = t => {
 function initDash(){
   popularSelects();
   dadosFiltrados = DADOS;
-  switchTab("geral");
+  // Mostra geral imediatamente sem esperar clique
+  ["geral","mensal","comp","explorar"].forEach(id=>{
+    document.getElementById("view-"+id).style.display = id==="geral" ? "" : "none";
+    document.getElementById("tab-"+id).classList.toggle("active", id==="geral");
+  });
+  curTab = "geral";
+  renderGeral();
   renderMonthBtns("comp-btns");
   document.getElementById("last-update").textContent=`Atualizado em ${new Date().toLocaleDateString("pt-BR")}`;
 }
