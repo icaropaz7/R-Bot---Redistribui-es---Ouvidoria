@@ -434,14 +434,7 @@ function renderComp(){
 // ——— EXPLORAR ———
 let dadosFiltrados = [];
 
-function popularSelects(){
-  const squads=[...new Set(DADOS.filter(d=>d.squad&&d.squad!=="-").map(d=>d.squad))].sort();
-  const analistas=[...new Set(DADOS.map(d=>d.analista))].sort();
-  const sel=document.getElementById("f-squad");
-  squads.forEach(s=>{const o=document.createElement("option");o.value=s;o.textContent=s;sel.appendChild(o);});
-  const sel2=document.getElementById("f-analista");
-  analistas.forEach(a=>{const o=document.createElement("option");o.value=a;o.textContent=a;sel2.appendChild(o);});
-}
+function popularSelects(){ /* opções já pré-populadas no HTML */ }
 
 function getFiltros(){
   return {
